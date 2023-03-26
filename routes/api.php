@@ -23,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/generate-token', [ZohoOAuthController::class, 'generateToken']);
 Route::get('/refresh-token', [ZohoOAuthController::class, 'refreshToken']);
+Route::post('/add-contact', [ZohoContactController::class, 'addContact']);
+Route::post('/add-deal', [ZohoDealController::class, 'addDeal']);
