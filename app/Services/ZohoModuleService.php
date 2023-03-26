@@ -43,7 +43,7 @@ class ZohoModuleService
         ];
     }
 
-    public function makeRequest(string $requestUrl, array $requestBody, $post = 'post')
+    public function makeRequest(string $requestUrl, array $requestBody)
     {
         $response = Http::withHeaders([
             'Authorization' => 'Zoho-oauthtoken ' . $this->accessToken
