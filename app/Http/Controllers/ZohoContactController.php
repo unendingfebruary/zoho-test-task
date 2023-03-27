@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class ZohoContactController extends Controller
 {
+    public const CONTACT_MODULE = 'Contacts';
+
     public ZohoModuleService $moduleService;
 
     public function __construct(ZohoModuleService $moduleService)
@@ -16,7 +18,7 @@ class ZohoContactController extends Controller
 
     public function addContact(Request $request)
     {
-        $url = $this->moduleService->getContactsRequestUrl();
+        $url = $this->moduleService->getRequestUrl(self::CONTACT_MODULE);
         $requestBody = $this->moduleService->getRequestBody($request->all());
 
         return $this->moduleService->makeRequest($url, $requestBody);

@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Http;
 class ZohoModuleService
 {
     public const END_POINT = '/crm/v4/';
-    public const CONTACTS_MODULE = 'Contacts';
-    public const DEALS_MODULE = 'Deals';
+
     private string $apiDomain;
     private string $accessToken;
 
@@ -19,14 +18,9 @@ class ZohoModuleService
         $this->accessToken = ZohoOAuth::getAccessToken();
     }
 
-    public function getContactsRequestUrl(): string
+    public function getRequestUrl(string $module): string
     {
-        return $this->getBaseRequestUrl() . self::CONTACTS_MODULE;
-    }
-
-    public function getDealsRequestUrl(): string
-    {
-        return $this->getBaseRequestUrl() . self::DEALS_MODULE;
+        return $this->getBaseRequestUrl() . $module;
     }
 
     public function getBaseRequestUrl(): string

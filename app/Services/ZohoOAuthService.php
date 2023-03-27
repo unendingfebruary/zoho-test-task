@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Http;
 class ZohoOAuthService
 {
     public const ZOHO_ACCOUNT_URL = 'https://accounts.zoho.eu/oauth/v2/token';
+
     private string $clientId;
     private string $clientSecret;
     private string $clientCode;

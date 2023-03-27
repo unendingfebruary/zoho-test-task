@@ -42,7 +42,7 @@ Add deal `POST /api/add-deal`
 ```
 {
     "Deal_Name": "Name",
-    "Contact_Name": "User (contact) ID",
+    "Contact_Name": "User (contact) ID"
 }
 ```
 
